@@ -1,0 +1,10 @@
+corrob			Robust correlation measure
+covrob			Robust covariance measure
+dcov			Distance covariance matrix
+groc			Main function, groc method
+groc.fit	     	Fits a groc model with the grid algorithm
+groc.crossval	     	Cross-validation of groc models
+model.frame.groc    	Extract Information From a Fitted groc Model
+plot.groc		Plot groc objects
+predict.groc		Predict Method for groc
+prim7			prim7 Dataset

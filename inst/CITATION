@@ -1,0 +1,17 @@
+citHeader("To cite the groc package in publications use:")
+
+citEntry(entry="Article",
+         title = "The R Package groc for Generalized Regression on Orthogonal Components",
+         author = personList(as.person("M. Bilodeau"),as.person("P. Lafaye de Micheaux"),as.person("S. Mahdi")),
+	 journal = "Journal of Statistical Software",
+         year  = "2014",
+	 pages = "??-??",
+	 volume = "??",
+         textVersion = 
+         paste("Bilodeau, P. and Lafaye de Micheaux, P. and Mahdi, S. (2014)", 
+               "The R Package groc for Generalized Regression on Orthogonal Components",
+               "Journal of Statistical Software",
+              "vol. ??, p. ??-??"
+	      )
+)
+
