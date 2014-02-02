@@ -3,7 +3,7 @@
 // Distance correlation from Gabor et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
 
 
-//#include <iostream>
+#include <iostream>
 using namespace std;
 
 #include <R.h>

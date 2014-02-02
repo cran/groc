@@ -42,7 +42,7 @@ extern "C" {
     Y = REAL(RY);
 
     SEXP simplegrid(SEXP Rr, SEXP RU, SEXP RY, SEXP RNg, SEXP RNc, SEXP RD, SEXP rho);
-    void deheuvels(double *r, double *s, int *n, double *resBn);
+    void deheuvels(double *r, double *s, int *ranking, int *n, double *resBn);
 
     int i, k, j, l;
     double *ytmp, *xtmp;

@@ -1,4 +1,4 @@
-aa9187910ce91142bc2050aad094cdee *DESCRIPTION
+81a9dc1791cd62d856026067905a0c76 *DESCRIPTION
 5bd08cb5004be0d757b5186bd67bb4df *INDEX
 49508bcde3578079b414a9fa534b364a *NAMESPACE
 0bdb46980b25b8c16e895ac52d19ff54 *R/NotUsed/otherdepmeasures.R
@@ -8,7 +8,7 @@ efb9ab60a72b035c005bacef109570f2 *R/dependencemeasures.R
 5c6ac755fcc5b79d027ce0e5b642ef85 *R/summaries.R
 7d7754216a0083eca772e364f5ecccd5 *data/prim7.csv.gz
 6c140166a3ebee2d4c17ca75d6d168d7 *inst/CITATION
-d24fdbbfe3d7845cd98ca32fcf91ab08 *inst/HISTORY
+402d007189c4d511e8fbba8c5f5ed7e3 *inst/HISTORY
 e0c09b3cf33bfb785d22baac203d370b *man/corrob.Rd
 78ccd62d58e7d55bef91df1fbf32061b *man/covrob.Rd
 93a85effd57bb2e66a3bf8208014c3f2 *man/dcov.Rd
@@ -23,5 +23,5 @@ e7c33d83793b3b365272be99f9e1ba7c *man/predict.groc.Rd
 91c23c77fe45859bdf99cd1f6d980b69 *man/summary.groc.Rd
 f1e921c4f94bd3d6b630688ccfeb03d4 *src/Other/deheuvels.cpp
 750c98732979e704bbb4d6741ac35199 *src/Other/simplegrid.cpp
-a5b3a56aaa70afc803295be7a07d3390 *src/dcov.cpp
-8a90fbe6e920f8f9f3de9040ccfe2dc4 *src/gridalgo.cpp
+e083fd9f71a8abcef7432c05bd5d1a44 *src/dcov.cpp
+ed3c5e717aa73448b4c776a7a0f3e396 *src/gridalgo.cpp
