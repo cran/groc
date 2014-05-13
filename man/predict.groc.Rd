@@ -22,7 +22,7 @@ vector of positive integers.  The components to use in
     the prediction.}
   \item{na.action}{
 function determining what should be done with missing
-    values in \code{newdata}. By default, noting is done.
+    values in \code{newdata}. By default, nothing is done.
 }
   \item{\dots}{
 further arguments.  Currently not used

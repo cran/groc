@@ -7,7 +7,7 @@ Compute the distance covariance measure of Szekely, Rizzo, and Bakirov
 (2007) between two samples.
 }
 \usage{
-dcov(x, y, Cpp=TRUE)
+dcov(x, y, Cpp = TRUE)
 }
 \arguments{
   \item{x}{
