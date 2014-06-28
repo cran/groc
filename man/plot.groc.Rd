@@ -34,7 +34,7 @@ Micheaux (\email{lafaye@dms.umontreal.ca})
 
 
 \examples{
-data(pulpfiber)
+data("pulpfiber",package="robustbase")
 X <- as.matrix(pulpfiber[, 1:4])
 Y <- as.matrix(pulpfiber[, 5:8])
 data <- data.frame(X=I(X), Y=I(Y))

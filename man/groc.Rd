@@ -10,7 +10,7 @@ Generalized regression on orthogonal components.
 \method{groc}{default}(formula, ncomp, data, subset, na.action, plsrob =
                  FALSE, method = c("lm", "lo", "s", "lts"), D = NULL,
                  gamma = 0.75, Nc = 10, Ng = 20, scale = FALSE, Cpp =
-                 TRUE, model = TRUE, x = FALSE, y = FALSE, ...)
+                 TRUE, model = TRUE, x = FALSE, y = FALSE, sp = NULL, ...)
 groc(\dots)
 }
 \arguments{
@@ -41,6 +41,16 @@ groc(\dots)
   \item{model}{a logical.  If \code{TRUE}, the model frame is returned.}
   \item{x}{a logical.  If \code{TRUE}, the model matrix is returned.}
   \item{y}{a logical.  If \code{TRUE}, the response is returned.}
+\item{sp}{
+      A vector of smoothing parameters can be provided here.
+          Smoothing parameters must be supplied in the order that the
+          smooth terms appear in the model formula. Negative elements
+          indicate that the parameter should be estimated, and hence a
+          mixture of fixed and estimated parameters is
+	  possible. 'length(sp)' should be equal to 'ncomp' and
+	  corresponds 
+	  to the number of underlying smoothing parameters.
+  }
   \item{\dots}{further arguments to be passed to or from methods.}
 }
 %\details{

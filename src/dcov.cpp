@@ -1,6 +1,6 @@
 // Description:
 // Computes the dcov measure of dependence
-// Distance correlation from Gabor et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
+// Distance covariance from Skezely et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
 
 
 #include <iostream>
@@ -81,6 +81,7 @@ extern "C" {
 	Vup[0] = Vup[0] + a[(j-1)*n+(i-1)]*b[(j-1)*n+(i-1)];
       }
     }
+    Vup[0] = sqrt(Vup[0] / (n *n));
 
     delete[] a;
     delete[] meanak;

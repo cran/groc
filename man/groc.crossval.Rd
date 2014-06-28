@@ -78,7 +78,7 @@ Micheaux (\email{lafaye@dms.umontreal.ca})
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 %}
 \examples{
-data(yarn)
+data(yarn,package="pls")
 yarn.groc <- groc(density ~ NIR, 6, data = yarn)
 yarn.cv <- grocCrossval(yarn.groc, segments = 10)
 

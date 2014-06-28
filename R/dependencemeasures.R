@@ -17,8 +17,12 @@ covrob <- function(t, u) ((scaleTau2(t + u))^2 - (scaleTau2(t - u))^2)/4
 # scaleTau2() comes from package robustbase
 
 dcov <- function(x,y,Cpp=TRUE) {
-# Distance correlation from Gabor et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
+# Distance covariance from Gabor J. Székely et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
+# Warning: Only valid to compute the distance covariance for two random variables X and Y
+# This means that X and Y cannot be random Vectors.
 
+  if (is.matrix(x)) if (ncol(x)>1) stop("Consider using the dcov() function in package energy.")
+  if (is.matrix(y)) if (ncol(y)>1) stop("Consider using the dcov() function in package energy.")
   n <- length(x)
   if (length(y) != n) stop("x and y should have the same length")
   
@@ -41,7 +45,7 @@ dcov <- function(x,y,Cpp=TRUE) {
     B <- sweep(B,MARGIN=2,STATS=mean.b.l,FUN="-")
     B <- B + mean.b
     
-    Vup <- sum(A*B)
+    Vup <- sqrt(mean(A*B))
   }
   
   return(Vup)

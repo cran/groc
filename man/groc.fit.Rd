@@ -8,7 +8,7 @@
 groc.fit(X, Y, ncomp = min(nrow(X) - 1, ncol(X)), D = NULL, gamma =
                  0.75, method = NULL, plsrob = FALSE, Nc = 10, Ng = 20,
                  scale = FALSE, Cpp = TRUE, stripped = FALSE, maxiter =
-                 100, ...)
+                 100, sp = NULL, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -51,6 +51,16 @@ logical.  If \code{TRUE} the calculations are stripped
   \item{maxiter}{
 Integer. Maximal number of iterations in the grid algorithm. Used only when there are more than one response.
 }
+\item{sp}{
+      A vector of smoothing parameters can be provided here.
+          Smoothing parameters must be supplied in the order that the
+          smooth terms appear in the model formula. Negative elements
+          indicate that the parameter should be estimated, and hence a
+          mixture of fixed and estimated parameters is
+	  possible. 'length(sp)' should be equal to 'ncomp' and
+	  corresponds 
+	  to the number of underlying smoothing parameters.
+  }
   \item{\dots}{
 other arguments.  Currently ignored.
 }

@@ -4,7 +4,9 @@
 }
 \description{
 Compute the distance covariance measure of Szekely, Rizzo, and Bakirov
-(2007) between two samples.
+(2007) between two samples. Warning: Only valid to compute the distance
+covariance for two random variables X and Y. This means that X and Y
+cannot be random Vectors. If this is the case, consider the package \pkg{energy}.
 }
 \usage{
 dcov(x, y, Cpp = TRUE)

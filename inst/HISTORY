@@ -16,3 +16,16 @@ Version 1.0.1 :
 Version 1.0.2 : 
 - I added several examples in the documentation file groc.Rd
 
+2014-06-09
+----------
+
+Version 1.0.3 : 
+- I modified function dcov() (sqrt(mean()) instead of sum() for the output) in the R code and C code
+
+2014-06-28
+----------
+
+Version 1.0.4 : 
+- I added an 'Imports' field (in file DESCRIPTION).
+- I modified the NAMESPACE file.
+- I added an 'sp' argument (smoothing parameters for the gam function when using the 's' smoother) to the functions groc.fit and groc.default.

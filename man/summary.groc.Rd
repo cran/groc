@@ -30,7 +30,7 @@
 \author{P. Lafaye de Micheaux}
 \seealso{\code{\link{groc}}, \code{\link{grocCrossval}}}
 \examples{
-data(yarn)
+data("yarn",package="pls")
 yarn.groc <- groc(density ~ NIR, 6, data = yarn)
 yarn.cv <- grocCrossval(yarn.groc, segments = 10)
 print(yarn.groc)

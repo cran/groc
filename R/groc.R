@@ -14,7 +14,7 @@ groc.default <- function(formula, ncomp, data, subset, na.action,plsrob = FALSE,
                           method = c("lm","lo","s","lts"),
                           D=NULL,gamma=0.75, 
                           Nc=10,Ng=20,scale=FALSE,Cpp=TRUE,
-                          model = TRUE, x = FALSE, y = FALSE, ...)
+                          model = TRUE, x = FALSE, y = FALSE, sp = NULL, ...)
 {
 
 
@@ -81,7 +81,7 @@ groc.default <- function(formula, ncomp, data, subset, na.action,plsrob = FALSE,
   fitFunc <- groc.fit
 
   ## Fit the model:
-  z <- fitFunc(X, Y, ncomp, D, gamma, method, plsrob, Nc, Ng, scale, Cpp, ...)
+  z <- fitFunc(X, Y, ncomp, D, gamma, method, plsrob, Nc, Ng, scale, Cpp, FALSE, 100, sp, ...)
   
   ## Build and return the object:
   class(z) <- "groc"
@@ -128,7 +128,7 @@ groc.default <- function(formula, ncomp, data, subset, na.action,plsrob = FALSE,
   return(r) 
 }
 
-groc.fit <- function(X,Y,ncomp=min(nrow(X)-1,ncol(X)),D=NULL,gamma=0.75,method=NULL,plsrob=FALSE,Nc=10,Ng=20,scale=FALSE,Cpp=TRUE,stripped=FALSE,maxiter=100,...) {
+groc.fit <- function(X,Y,ncomp=min(nrow(X)-1,ncol(X)),D=NULL,gamma=0.75,method=NULL,plsrob=FALSE,Nc=10,Ng=20,scale=FALSE,Cpp=TRUE,stripped=FALSE,maxiter=100,sp=NULL,...) {
 
 
   tryCatch.W.E <- function(expr)
@@ -276,7 +276,7 @@ groc.fit <- function(X,Y,ncomp=min(nrow(X)-1,ncol(X)),D=NULL,gamma=0.75,method=N
 # (d)   
     for (j in 1:q) {
       if (method %in% c("lm")) if (!is.null(tryCatch.W.E(Gobjects[[h]][[j]] <- gam(formula=eval(parse(text=paste("y",j," ~ -1 ",formule,sep=""))),data=gam.df))$warning)) stop(paste("gam() failed! Use ncomp <=",h-1))
-      if (method %in% c("lo","s")) Gobjects[[h]][[j]] <- gam(formula=eval(parse(text=paste("y",j," ~ ",formule,sep=""))),data=gam.df)
+      if (method %in% c("lo","s")) Gobjects[[h]][[j]] <- gam(formula=eval(parse(text=paste("y",j," ~ ",formule,sep=""))),data=gam.df,sp=sp[1:h])
         #if (!is.null(tryCatch.W.E(Gobjects[[h]][[j]] <- gam(formula=eval(parse(text=paste("y",j," ~ ",formule,sep=""))),data=gam.df))$warning)) stop(paste("gam() failed! Use ncomp <= ",h-1))
       if (method %in% c("lts")) Gobjects[[h]][[j]] <- lqs(formula=eval(parse(text=paste("y",j," ~ ",formule,sep=""))),data=gam.df,method="lts",quantile=floor(gamma*n) + floor((h+1)/2))
       

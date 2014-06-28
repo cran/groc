@@ -50,7 +50,7 @@ Micheaux (\email{lafaye@dms.umontreal.ca})
 \code{\link{plot.groc}}
 }
 \examples{
-data(wood)
+data("wood",package="robustbase")
 out <- groc(y ~ x1+x2+x3+x4+x5, ncomp=1, data=wood,D=corrob, method="lts")
 predict(out)
 

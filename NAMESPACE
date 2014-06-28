@@ -9,5 +9,7 @@ import(
  pls,
  mgcv,
  robust,
-  robustbase
+ robustbase,
+ rrcov,
+ MASS
 )
