@@ -26,6 +26,11 @@ If \code{plsrob=FALSE}, a plot of robust Mahalanobis distances for residuals ver
 If \code{plsrob=TRUE}, the previous plot is done with another similar plot of classical Mahalanobis distances to compare the identification
 of the various type of points obtained by classical or robust partial least squares. 
 }
+\references{
+Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi (2015), The R
+Package groc for Generalized Regression on Orthogonal Components,
+\emph{Journal of Statistical Software}, 65(1), 1-29, \cr \url{http://www.jstatsoft.org/v65/i01/}
+}
 \author{
 %%  ~~who you are~~
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
@@ -34,6 +39,8 @@ Micheaux (\email{lafaye@dms.umontreal.ca})
 
 
 \examples{
+## This example takes some time:
+\dontrun{
 data("pulpfiber",package="robustbase")
 X <- as.matrix(pulpfiber[, 1:4])
 Y <- as.matrix(pulpfiber[, 5:8])
@@ -41,6 +48,7 @@ data <- data.frame(X=I(X), Y=I(Y))
 set.seed(55481)
 out.rob <- groc(Y ~ X, data=data, plsrob=TRUE)
 plot(out.rob, cex=.6)
+}
 }
 \keyword{regresion}
 \keyword{multivariate}

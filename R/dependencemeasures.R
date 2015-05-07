@@ -17,7 +17,7 @@ covrob <- function(t, u) ((scaleTau2(t + u))^2 - (scaleTau2(t - u))^2)/4
 # scaleTau2() comes from package robustbase
 
 dcov <- function(x,y,Cpp=TRUE) {
-# Distance covariance from Gabor J. Székely et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
+# Distance covariance from Gabor J. Szekely et al., Annals of Stat, 2007, vol 35 (6), p.2769-2794
 # Warning: Only valid to compute the distance covariance for two random variables X and Y
 # This means that X and Y cannot be random Vectors.
 

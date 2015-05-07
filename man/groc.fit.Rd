@@ -86,9 +86,11 @@ Computed in the preprocessing to principal component scores when the number of
 observations is less than the number of predictors.}
   \item{dnnames}{dimnames of 'fitted.values'}
 }
-%\references{
-%% ~put references to the literature/web site here ~
-%}
+\references{
+Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi (2015), The R
+Package groc for Generalized Regression on Orthogonal Components,
+\emph{Journal of Statistical Software}, 65(1), 1-29, \cr \url{http://www.jstatsoft.org/v65/i01/}
+}
 \author{
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
 Micheaux (\email{lafaye@dms.umontreal.ca})}

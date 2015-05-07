@@ -27,6 +27,11 @@
 \value{
   \code{print.groc} return the object invisibly.
 }
+\references{
+Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi (2015), The R
+Package groc for Generalized Regression on Orthogonal Components,
+\emph{Journal of Statistical Software}, 65(1), 1-29, \cr \url{http://www.jstatsoft.org/v65/i01/}
+}
 \author{P. Lafaye de Micheaux}
 \seealso{\code{\link{groc}}, \code{\link{grocCrossval}}}
 \examples{
