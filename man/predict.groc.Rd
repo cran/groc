@@ -45,7 +45,7 @@ Package groc for Generalized Regression on Orthogonal Components,
 \author{
 %%  ~~who you are~~
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
-Micheaux (\email{lafaye@dms.umontreal.ca})
+Micheaux (\email{lafaye@unsw.edu.au})
 }
 
 \seealso{

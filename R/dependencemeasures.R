@@ -27,7 +27,7 @@ dcov <- function(x,y,Cpp=TRUE) {
   if (length(y) != n) stop("x and y should have the same length")
   
   if (Cpp) {
-    Vup <- .C("dcov",as.double(x),as.double(y),as.integer(n),Vup=as.double(0))$Vup
+    Vup <- .C("dcovC",as.double(x),as.double(y),as.integer(n),Vup=as.double(0), PACKAGE = "groc")$Vup
   } else {
     a <- outer(as.vector(x),as.vector(x),FUN=function(y,x) abs(y-x))
     mean.ak. <- rowMeans(a)

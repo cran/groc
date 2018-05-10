@@ -26,11 +26,11 @@ Value of the robust correlation.
   Salibian-Barrera, Ricardo Maronna, Eric Zivot, David Rocke, Doug
   Martin, Martin Maechler and Kjell Konis. (2013). robust: Robust
   Library. R package version 0.4-11.
-  \url{http://CRAN.R-project.org/package=robust}
+  \url{https://CRAN.R-project.org/package=robust}
 }
 \author{
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
-Micheaux (\email{lafaye@dms.umontreal.ca})
+Micheaux (\email{lafaye@unsw.edu.au})
 }
 \seealso{
 \code{\link{covrob}}, \code{\link{dcov}}

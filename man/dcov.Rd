@@ -36,7 +36,7 @@ See \pkg{energy}.
 }
 \author{
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
-Micheaux (\email{lafaye@dms.umontreal.ca})
+Micheaux (\email{lafaye@unsw.edu.au})
 }
 \seealso{
 \code{\link{covrob}}, \code{\link{corrob}}

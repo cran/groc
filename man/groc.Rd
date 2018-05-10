@@ -86,12 +86,13 @@ Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi (2015), The R
 Package groc for Generalized Regression on Orthogonal Components,
 \emph{Journal of Statistical Software}, 65(1), 1-29, \cr \url{http://www.jstatsoft.org/v65/i01/}
 }
-\author{Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de Micheaux (\email{lafaye@dms.umontreal.ca}) and
+\author{Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de Micheaux (\email{lafaye@unsw.edu.au}) and
   Smail Mahdi (\email{smail.mahdi@cavehill.uwi.edu})
 }
 \examples{
 
 \dontrun{
+library(MASS)
 ########################
 # Codes for Example 1  #
 ########################
@@ -109,7 +110,7 @@ data("trees")
 out <- groc(Volume ~ Height + Girth, ncomp = 1, D = spearman, 
              method = "s", data = trees)
 cor(trees$Volume, fitted(out)) ^ 2
-plot(out$T, trees$Volume, xlab = "First latent variable",
+plot(out$T, trees$Volume, xlab = "First component",
      ylab = "Volume", pch = 20)
 lines(sort(out$T), fitted(out)[order(out$T)])
 out <- boxcox(Volume ~ Height + Girth, data = trees, 

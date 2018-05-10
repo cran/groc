@@ -35,3 +35,13 @@ Version 1.0.4 :
 
 Version 1.0.5 : 
 - I modified the CITATION and NAMESPACE files, and a few Rd files
+
+2018-05-10
+----------
+
+Version 1.0.6 : 
+- I modified file groc.Rd
+- DESCRIPTION: I changed the email address
+- NAMESPACE: I added a few importFrom() entries; I also modified the useDynLib() entry
+- dependencemeasures.R: I modified dcov into dcovC and I added  PACKAGE = "groc" in a .C() call
+- I added a file groc_init.c

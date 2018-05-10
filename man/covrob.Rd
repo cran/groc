@@ -29,7 +29,7 @@ Value of the robust covariance.
 }
 \author{
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
-Micheaux (\email{lafaye@dms.umontreal.ca})
+Micheaux (\email{lafaye@unsw.edu.au})
 }
 \seealso{
 \code{\link{corrob}}, \code{\link{dcov}}

@@ -12,7 +12,7 @@ using namespace std;
 
 extern "C" {
   
-  void dcov(double *x, double *y, int *xlen, double *Vup) {
+  void dcovC(double *x, double *y, int *xlen, double *Vup) {
 
     int n=xlen[0], i, j;
     double meana=0.0, meanb=0.0;

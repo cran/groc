@@ -71,7 +71,7 @@ Package groc for Generalized Regression on Orthogonal Components,
 }
 \author{
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de
-Micheaux (\email{lafaye@dms.umontreal.ca})
+Micheaux (\email{lafaye@unsw.edu.au})
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
