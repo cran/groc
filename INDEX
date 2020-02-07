@@ -1,5 +1,6 @@
 corrob			Robust correlation measure
 covrob			Robust covariance measure
+covRob			Robust covariance measure from package robust
 dcov			Distance covariance matrix
 groc			Main function, groc method
 groc.fit	     	Fits a groc model with the grid algorithm

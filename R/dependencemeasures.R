@@ -12,7 +12,7 @@
 }
 
 corrob <- function(t,u) covRob(cbind(t,u), corr = TRUE, distance = FALSE, estim = "pairwiseGK")$cov[1,2]
-# covRob() comes from package robust
+# covRob() comes originally from package robust
 covrob <- function(t, u) ((scaleTau2(t + u))^2 - (scaleTau2(t - u))^2)/4
 # scaleTau2() comes from package robustbase
 

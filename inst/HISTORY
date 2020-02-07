@@ -45,3 +45,12 @@ Version 1.0.6 :
 - NAMESPACE: I added a few importFrom() entries; I also modified the useDynLib() entry
 - dependencemeasures.R: I modified dcov into dcovC and I added  PACKAGE = "groc" in a .C() call
 - I added a file groc_init.c
+
+2020-02-07
+----------
+
+Version 1.0.7 : 
+
+- I removed package 'robust' from Imports field in DESCRIPTION file since it might be removed from the CRAN
+- I added its function covRob() to a file R/covRob.q since this function is used in my file dependencemeasures.R, and I also copied their file covRob.Rd to the man/ directory and slight;y edited it. I added this function in the INDEX file. I di the same for the function covRob.control().
+- I removed 'robust' from the NAMESPACE file (but added the new functions to it)
