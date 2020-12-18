@@ -30,8 +30,15 @@ extern "C" {
     PROTECT(RNc = AS_INTEGER(RNc));
     PROTECT(RNg = AS_INTEGER(RNg));
     PROTECT(Rmaxiter = AS_INTEGER(Rmaxiter));
-    PROTECT(Rr = coerceVector(Rr, REALSXP));
-    PROTECT(Rs = coerceVector(Rs, REALSXP));
+
+    PROTECT_INDEX ipr;
+    PROTECT_WITH_INDEX(Rr = coerceVector(Rr, REALSXP), &ipr);
+
+    PROTECT_INDEX ips;
+    PROTECT_WITH_INDEX(Rs = coerceVector(Rs, REALSXP), &ips);
+
+    //    PROTECT(Rr = coerceVector(Rr, REALSXP));
+    //    PROTECT(Rs = coerceVector(Rs, REALSXP));
     PROTECT(RU = coerceVector(RU, REALSXP));
     PROTECT(RY = coerceVector(RY, REALSXP));
 
@@ -69,7 +76,9 @@ extern "C" {
     if (q==1) {
       r[0] = 1.0;
       for (i=1;i<p;i++) r[i] = 0.0;
-      Rr = simplegrid(Rr,RU,RY,RNg,RNc,RD,rho);
+      REPROTECT(Rr = simplegrid(Rr,RU,RY,RNg,RNc,RD,rho), ipr);
+      //      Rr = coerceVector(Rr, REALSXP), ipr);
+      r = REAL(Rr);
     }
 
     if (q>1) {
@@ -84,6 +93,8 @@ extern "C" {
       while(error>0.0001) {
 
 	if (nbiter > maxiter[0]) {
+	  delete[] rold;
+	  delete[] sold;
 	  UNPROTECT(10);
 	  return(chariter);
 	}
@@ -96,15 +107,19 @@ extern "C" {
 	  for (l=0;l<q;l++) ytmp[j] = ytmp[j] + Y[l*n+j]*s[l];
 	}
 
-	Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho);
-
+	REPROTECT(Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho), ipr);
+	//	REPROTECT(Rr = coerceVector(Rr, REALSXP), ipr);
+	r = REAL(Rr);
+	
 	for (j=0;j<n;j++) { 
 	  xtmp[j] = 0.0;
 	  for (l=0;l<p;l++) xtmp[j] = xtmp[j] + U[l*n+j]*r[l];
 	}
 
-	Rs = simplegrid(Rs,RY,Rxtmp,RNg,RNc,RD,rho);	  
-
+	REPROTECT(Rs = simplegrid(Rs,RY,Rxtmp,RNg,RNc,RD,rho), ips);	  
+	//	REPROTECT(Rs = coerceVector(Rs, REALSXP), ips);
+	s = REAL(Rs);
+	
 	maxr = 0.0;
 	maxs = 0.0;
 	for (k=0;k<p;k++) {
@@ -123,12 +138,10 @@ extern "C" {
       }
     }
     
-    UNPROTECT(10);
-
-    //    delete[] ytmp;
-    //    delete[] xtmp;
     delete[] rold;
     delete[] sold;
+    UNPROTECT(10);
+
     return(Rr);
 
   }

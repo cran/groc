@@ -89,7 +89,7 @@ observations is less than the number of predictors.}
 \references{
 Martin Bilodeau, Pierre Lafaye de Micheaux, Smail Mahdi (2015), The R
 Package groc for Generalized Regression on Orthogonal Components,
-\emph{Journal of Statistical Software}, 65(1), 1-29, \cr \url{http://www.jstatsoft.org/v65/i01/}
+\emph{Journal of Statistical Software}, 65(1), 1-29, \cr \url{https://www.jstatsoft.org/v65/i01/}
 }
 \author{
 Martin Bilodeau (\email{bilodeau@dms.umontreal.ca}) and Pierre Lafaye de

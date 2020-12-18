@@ -54,3 +54,14 @@ Version 1.0.7 :
 - I removed package 'robust' from Imports field in DESCRIPTION file since it might be removed from the CRAN
 - I added its function covRob() to a file R/covRob.q since this function is used in my file dependencemeasures.R, and I also copied their file covRob.Rd to the man/ directory and slight;y edited it. I added this function in the INDEX file. I di the same for the function covRob.control().
 - I removed 'robust' from the NAMESPACE file (but added the new functions to it)
+
+2020-12-15
+----------
+
+Version 1.0.8 : 
+
+- I removed ppls from the Suggests field in file DESCRIPTION
+- I added the data set cookie taken from the now orphaned package ppls (in order to remove a NOTE on CRAN checks)
+- I added R (>= 2.10.0) in file DESCRIPTION
+- I changed at several places http to https (with trailing slashes) and I added an Authors (date) <doi:...> entry in the DESCRIPTION file
+
