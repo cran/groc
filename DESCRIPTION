@@ -1,6 +1,6 @@
 Package: groc
-Version: 1.0.8
-Date: 2020-12-15
+Version: 1.0.9
+Date: 2024-02-25
 Title: Generalized Regression on Orthogonal Components
 Author: Pierre Lafaye De Micheaux [aut, cre],
   Martin Bilodeau [aut],
@@ -58,7 +58,7 @@ Depends: R (>= 2.10.0), rrcov
 Description: Robust multiple or multivariate linear regression, nonparametric regression on orthogonal components, classical or robust partial least squares models as described in Bilodeau, Lafaye De Micheaux and Mahdi (2015) <doi:10.18637/jss.v065.i01>.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2020-12-17 23:13:08 UTC; lafaye
+Packaged: 2024-02-25 04:48:14 UTC; lafaye
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2020-12-18 07:30:16 UTC
+Date/Publication: 2024-02-25 05:00:03 UTC

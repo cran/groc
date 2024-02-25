@@ -1,7 +1,7 @@
 useDynLib(groc, .registration = TRUE)
 #exportPattern("^[[:alpha:]]+")
 export(groc,groc.default,predict.groc,plot.groc,print.groc,summary.groc,
-       grocCrossval,corrob,covrob,dcov,covRob,covRob.control)
+       grocCrossval,corrob,covrob,dcov,covRob,covRob.control,grocfit)
 #S3methods are not viewable inside the R system. If you want this functionality
 # available put it in the previous export
 S3method(groc,default)

@@ -107,7 +107,8 @@ extern "C" {
 	  for (l=0;l<q;l++) ytmp[j] = ytmp[j] + Y[l*n+j]*s[l];
 	}
 
-	REPROTECT(Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho), ipr);
+	//	REPROTECT(Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho), ipr);
+	Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho);
 	//	REPROTECT(Rr = coerceVector(Rr, REALSXP), ipr);
 	r = REAL(Rr);
 	

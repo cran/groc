@@ -1,10 +1,10 @@
 citHeader("To cite groc in publications use:")
 
-citEntry(entry = "Article",
+bibentry(bibtype = "Article",
   title        = "The {R} Package {groc} for Generalized Regression on Orthogonal Components",
-  author       = personList(as.person("Martin Bilodeau"),
+  author       = c(person("Martin", "Bilodeau"),
                    person("Pierre", "Lafaye de Micheaux"),
-                   as.person("Smail Mahdi")),
+                   person("Smail", "Mahdi")),
   journal      = "Journal of Statistical Software",
   year         = "2015",
   volume       = "65",

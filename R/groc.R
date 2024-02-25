@@ -78,7 +78,7 @@ groc.default <- function(formula, ncomp, data, subset, na.action,plsrob = FALSE,
   }
   
   ## Select fit function:
-  fitFunc <- groc.fit
+  fitFunc <- grocfit
 
   ## Fit the model:
   z <- fitFunc(X, Y, ncomp, D, gamma, method, plsrob, Nc, Ng, scale, Cpp, FALSE, 100, sp, ...)
@@ -128,7 +128,7 @@ groc.default <- function(formula, ncomp, data, subset, na.action,plsrob = FALSE,
   return(r) 
 }
 
-groc.fit <- function(X,Y,ncomp=min(nrow(X)-1,ncol(X)),D=NULL,gamma=0.75,method=NULL,plsrob=FALSE,Nc=10,Ng=20,scale=FALSE,Cpp=TRUE,stripped=FALSE,maxiter=100,sp=NULL,...) {
+grocfit <- function(X,Y,ncomp=min(nrow(X)-1,ncol(X)),D=NULL,gamma=0.75,method=NULL,plsrob=FALSE,Nc=10,Ng=20,scale=FALSE,Cpp=TRUE,stripped=FALSE,maxiter=100,sp=NULL,...) {
 
 
   tryCatch.W.E <- function(expr)

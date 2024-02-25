@@ -1,11 +1,12 @@
-\name{groc.fit}
+\name{grocfit}
+\alias{grocfit}
 \alias{groc.fit}
 \title{Fitting a groc model}
 \description{
   Fits a groc model with the grid algorithm.
 }
 \usage{
-groc.fit(X, Y, ncomp = min(nrow(X) - 1, ncol(X)), D = NULL, gamma =
+grocfit(X, Y, ncomp = min(nrow(X) - 1, ncol(X)), D = NULL, gamma =
                  0.75, method = NULL, plsrob = FALSE, Nc = 10, Ng = 20,
                  scale = FALSE, Cpp = TRUE, stripped = FALSE, maxiter =
                  100, sp = NULL, ...)

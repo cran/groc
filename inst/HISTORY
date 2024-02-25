@@ -65,3 +65,12 @@ Version 1.0.8 :
 - I added R (>= 2.10.0) in file DESCRIPTION
 - I changed at several places http to https (with trailing slashes) and I added an Authors (date) <doi:...> entry in the DESCRIPTION file
 
+2024-02-25
+----------
+
+Version 1.0.9 : 
+
+- In dcov.Rd, replaced \url{} with \doi{}
+- Modified the CITATION file
+- Modified the groc.fit.Rd and groc.R files by renaming groc.fit function into grocfit
+- Modified the NAMESPACE file by adding grocfit to the list of exported functions
