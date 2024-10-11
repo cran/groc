@@ -13,10 +13,10 @@ extern "C" {
   
   SEXP simplegrid(SEXP Rr, SEXP RU, SEXP RY, SEXP RNg, SEXP RNc, SEXP RD, SEXP rho) {
 
-    R_len_t p = length(Rr), n = nrows(RU);
+    R_len_t p = Rf_length(Rr), n = Rf_nrows(RU);
 
-    if(!isFunction(RD) & (RD != R_NilValue)) error("RD must be a function");
-    if(!isEnvironment(rho)) error("rho must be an environment");
+    if(!Rf_isFunction(RD) & (RD != R_NilValue)) perror("RD must be a function");
+    if(!Rf_isEnvironment(rho)) perror("rho must be an environment");
 
     SEXP R_fcall, ans, RUvect;
 
@@ -26,9 +26,9 @@ extern "C" {
     PROTECT(RNc = AS_INTEGER(RNc));
     PROTECT(RNg = AS_INTEGER(RNg));
 
-    PROTECT(Rr = coerceVector(Rr, REALSXP));
-    PROTECT(RU = coerceVector(RU, REALSXP));
-    PROTECT(RY = coerceVector(RY, REALSXP));
+    PROTECT(Rr = Rf_coerceVector(Rr, REALSXP));
+    PROTECT(RU = Rf_coerceVector(RU, REALSXP));
+    PROTECT(RY = Rf_coerceVector(RY, REALSXP));
 
     Nc = INTEGER(RNc);
     Ng = INTEGER(RNg);
@@ -57,7 +57,7 @@ extern "C" {
     nptr = new int[1];
     nptr[0] = n;
 
-    PROTECT(RUvect = allocVector(REALSXP, n));
+    PROTECT(RUvect = Rf_allocVector(REALSXP, n));
     Uvect = REAL(RUvect);
 
     for (i=1;i<=Nc[0];i++) {
@@ -78,8 +78,8 @@ extern "C" {
 	    deheuvels(Uvect, Y, ranking, nptr, resBn);
 	    Dvect[l-1] = resBn[0];
 	  } else {
-	    PROTECT( R_fcall = lang3(RD, RUvect, RY) );
-	    ans = eval(R_fcall, rho);
+	    PROTECT( R_fcall = Rf_lang3(RD, RUvect, RY) );
+	    ans = Rf_eval(R_fcall, rho);
 	    UNPROTECT(1);
 	    Dvect[l-1]= REAL(ans)[0];
 	  }

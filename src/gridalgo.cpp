@@ -17,10 +17,10 @@ extern "C" {
 
   SEXP  grid(SEXP RNc, SEXP RNg, SEXP Rr, SEXP Rs, SEXP RU, SEXP RY, SEXP Rmaxiter, SEXP RD, SEXP rho) {
 
-    if(!isFunction(RD) & (RD != R_NilValue)) error("RD must be a function");
-    if(!isEnvironment(rho)) error("rho must be an environment");
+    if(!Rf_isFunction(RD) & (RD != R_NilValue)) perror("RD must be a function");
+    if(!Rf_isEnvironment(rho)) perror("rho must be an environment");
 
-    R_len_t p = length(Rr), q = length(Rs), n = nrows(RU);
+    R_len_t p = Rf_length(Rr), q = Rf_length(Rs), n = Rf_nrows(RU);
 
     SEXP Rytmp, Rxtmp;
 
@@ -32,15 +32,15 @@ extern "C" {
     PROTECT(Rmaxiter = AS_INTEGER(Rmaxiter));
 
     PROTECT_INDEX ipr;
-    PROTECT_WITH_INDEX(Rr = coerceVector(Rr, REALSXP), &ipr);
+    PROTECT_WITH_INDEX(Rr = Rf_coerceVector(Rr, REALSXP), &ipr);
 
     PROTECT_INDEX ips;
-    PROTECT_WITH_INDEX(Rs = coerceVector(Rs, REALSXP), &ips);
+    PROTECT_WITH_INDEX(Rs = Rf_coerceVector(Rs, REALSXP), &ips);
 
     //    PROTECT(Rr = coerceVector(Rr, REALSXP));
     //    PROTECT(Rs = coerceVector(Rs, REALSXP));
-    PROTECT(RU = coerceVector(RU, REALSXP));
-    PROTECT(RY = coerceVector(RY, REALSXP));
+    PROTECT(RU = Rf_coerceVector(RU, REALSXP));
+    PROTECT(RY = Rf_coerceVector(RY, REALSXP));
 
     maxiter = INTEGER(Rmaxiter);
     r = REAL(Rr);
@@ -53,17 +53,17 @@ extern "C" {
 
     int i, k, j, l;
     double *ytmp, *xtmp;
-    ytmp = new double[n];
-    xtmp = new double[n];
+    //    ytmp = new double[n];
+    //    xtmp = new double[n];
 
-    PROTECT(Rytmp = allocVector(REALSXP, n));
-    PROTECT(Rxtmp = allocVector(REALSXP, n));
+    PROTECT(Rytmp = Rf_allocVector(REALSXP, n));
+    PROTECT(Rxtmp = Rf_allocVector(REALSXP, n));
     ytmp = REAL(Rytmp);
     xtmp = REAL(Rxtmp);
 
     SEXP chariter;
-    PROTECT(chariter = allocVector(STRSXP, 1));
-    SET_STRING_ELT(chariter, 0, mkChar("failed"));
+    PROTECT(chariter = Rf_allocVector(STRSXP, 1));
+    SET_STRING_ELT(chariter, 0, Rf_mkChar("failed"));
 
     double error;
     double *rold, *sold;
@@ -107,8 +107,8 @@ extern "C" {
 	  for (l=0;l<q;l++) ytmp[j] = ytmp[j] + Y[l*n+j]*s[l];
 	}
 
-	//	REPROTECT(Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho), ipr);
-	Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho);
+		REPROTECT(Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho), ipr);
+		//Rr = simplegrid(Rr,RU,Rytmp,RNg,RNc,RD,rho);
 	//	REPROTECT(Rr = coerceVector(Rr, REALSXP), ipr);
 	r = REAL(Rr);
 	

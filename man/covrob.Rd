@@ -17,7 +17,7 @@ a numeric vector containing the data for the second variable.
 }
 }
 \details{
-This function uses the \code{\link{scaleTau2}} function from the \pkg{robustbase} package.
+This function uses the \code{\link[robustbase]{scaleTau2}} function from the \pkg{robustbase} package.
 }
 \value{
 Value of the robust covariance.

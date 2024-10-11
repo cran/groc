@@ -74,3 +74,17 @@ Version 1.0.9 :
 - Modified the CITATION file
 - Modified the groc.fit.Rd and groc.R files by renaming groc.fit function into grocfit
 - Modified the NAMESPACE file by adding grocfit to the list of exported functions
+
+
+2024-10-11
+----------
+
+Version 1.0.10 : 
+
+- added "Rf_" in front of various functions in files simplegrid.cpp and gridalgo.cpp to solve a new compilation error problem related to the new use of _R_CXX_USE_NO_REMAP_=true
+- added package anchors for all Rd \link{} targets not in the
+package itself and the base packages in files covrob.Rd (scaleTau2) and  delete.intercept.Rd (mvr, model.matrix.mvr)
+- I commented lines 56 and 57
+- I uncommented line 110 and commented line 111
+
+

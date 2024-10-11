@@ -16,5 +16,5 @@ delete.intercept(mm)
   A model matrix without intercept column.
 }
 \author{Bjorn-Helge Mevik and Ron Wehrens}
-\seealso{\code{\link{mvr}}, \code{\link{model.matrix.mvr}}}
+\seealso{\code{\link[pls]{mvr}}, \code{\link[pls]{model.matrix.mvr}}}
 \keyword{internal}
